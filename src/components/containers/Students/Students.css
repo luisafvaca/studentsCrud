@@ -1,0 +1,23 @@
+.students-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin-top: 40px;
+}
+
+.students-table-header {
+    display: flex;
+    justify-content: space-around;
+}
+
+.student-row {
+    display: flex;
+    justify-content: space-around;
+}
+
+.student-item {
+    width: 100%;
+}
+.students-table-header-item {
+    width: 100%;
+}
