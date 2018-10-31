@@ -19,7 +19,6 @@ export const fetchStudentsFailure = (error) => ({
     data : error 
 })
 export function getStudents(dispatch) {
-    console.log('entando action.')
     return (dispatch) => {
         dispatch(fetchStudentsBegin());
         fetchData().then((response) => {

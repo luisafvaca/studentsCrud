@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { connect } from 'react-redux';
-
 import { getStudents } from './StudentsActions';
+
+import Student from '../../functionals/student/student';
 
 import './Students.css';
 
@@ -10,7 +10,9 @@ class Students extends React.Component {
     componentWillMount(){
         this.props.studentsRequest();
     }
+
     render(){
+        const stundentsList = this.props.stundentsList;
         return(
             <section className="students-wrapper">
                 <div className="students-table-header">
@@ -20,15 +22,7 @@ class Students extends React.Component {
                     <div className="students-table-header-item">Edit</div>
                     <div className="students-table-header-item">Delete</div>
                 </div>
-                <div className="students-table-body">
-                    <div className="student-row">
-                        <p className="student-item">0000</p>
-                        <p className="student-item">Test Name</p>
-                        <p className="student-item">@test email</p>
-                        <p className="student-item"><button>Edit</button></p>
-                        <p className="student-item"><button>Delete</button></p>
-                    </div>
-                </div>
+                {stundentsList ? <Student stundentsList={this.props.stundentsList} /> : null}
             </section>
         )
     }
@@ -41,5 +35,11 @@ const mapDespatchToProps = (dispatch) => {
     }
 }
 
+const mapStateToProps = (state) => {
+    return {
+        stundentsList: state.studentsState.students[0]
+    }
+}
 
-export default connect (null, mapDespatchToProps)(Students);
+
+export default connect (mapStateToProps, mapDespatchToProps)(Students);

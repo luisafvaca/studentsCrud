@@ -14,7 +14,6 @@ function Students(state= initialState, action){
         case STUDENTS_REQUEST_SUCCESS:
             return {...state, students:[...state.students, action.data]};
         case STUDENTS_REQUEST_FAILURE:
-            console.log(action.data, 'data action')
             return {...state, studentsError: action.data}
         default:
             return state

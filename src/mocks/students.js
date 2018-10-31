@@ -1,13 +1,13 @@
 const students = [
     {
-      "_id": "1234-a",
+      "id": "1234-a",
       "index": 0,
       "isActive": false,
       "name": "Nellie Sherman",
       "email": "nelliesherman@retrack.com"
     },
     {
-      "_id": "1234-b",
+      "id": "1234-b",
       "index": 1,
       "guid": "8535e990-92f4-4a2f-9000-308a30cb7093",
       "isActive": false,
@@ -15,19 +15,19 @@ const students = [
       "email": "jewelmoses@comtent.com"
     },
     {
-      "_id": "1234-c",
+      "id": "1234-c",
       "index": 2,
       "name": "Teri Lawrence",
       "email": "terilawrence@sureplex.com"
     },
     {
-      "_id": "1234-d",
+      "id": "1234-d",
       "index": 3,
       "name": "Laurel Elliott",
       "email": "laurelelliott@confrenzy.com"
     },
     {
-      "_id": "1234-e",
+      "id": "1234-e",
       "index": 4,
       "name": "Jacobs Preston",
       "email": "jacobspreston@zillacom.com"
