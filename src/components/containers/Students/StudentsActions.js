@@ -23,6 +23,7 @@ export function getStudents(dispatch) {
             console.log(response, 'response')
             return JSON.parse(response)
         }).then((data) => {
+            console.log(data, 'data-response')
             dispatch(fetchStudentsSuccess(data))
         }).catch((error) => {
             dispatch(fetchStudentsFailure(error));

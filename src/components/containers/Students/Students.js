@@ -8,7 +8,6 @@ import './Students.css';
 
 class Students extends React.Component {
     componentWillMount(){
-        console.log('mounting component-----')
         this.props.studentsRequest();
     }
     render(){

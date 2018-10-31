@@ -1,229 +1,37 @@
 {
     "students": [
         {
-          "_id": "5bd8915b97c6fc95d179fcf6",
+          "_id": "1234-a",
           "index": 0,
-          "guid": "35cb2c37-91ba-4bb7-aa5a-4ae31d89f10d",
           "isActive": false,
-          "balance": "$2,183.35",
-          "picture": "http://placehold.it/32x32",
-          "age": 25,
-          "eyeColor": "blue",
           "name": "Nellie Sherman",
-          "gender": "female",
-          "company": "RETRACK",
-          "email": "nelliesherman@retrack.com",
-          "phone": "+1 (978) 487-2119",
-          "address": "792 Etna Street, Orick, Puerto Rico, 1946",
-          "about": "Laboris duis aliquip aliquip reprehenderit nisi in id nostrud reprehenderit excepteur ex. Ut sit amet consequat qui minim Lorem cupidatat consequat culpa. Amet laboris proident consectetur qui proident voluptate laboris. Amet commodo consectetur minim dolore ullamco qui laboris velit minim dolore. Sunt laboris officia nulla id. Consectetur cillum fugiat reprehenderit ex irure cillum non amet deserunt mollit adipisicing incididunt. Enim amet esse do cillum ea tempor sint nisi consectetur sunt aute Lorem aliquip.\r\n",
-          "registered": "2016-08-07T03:04:10 +05:00",
-          "latitude": 68.978448,
-          "longitude": -33.862442,
-          "tags": [
-            "adipisicing",
-            "nisi",
-            "cillum",
-            "amet",
-            "pariatur",
-            "proident",
-            "dolor"
-          ],
-          "friends": [
-            {
-              "id": 0,
-              "name": "Lillian Hahn"
-            },
-            {
-              "id": 1,
-              "name": "Mendez Bonner"
-            },
-            {
-              "id": 2,
-              "name": "Rose Dodson"
-            }
-          ],
-          "greeting": "Hello, Nellie Sherman! You have 2 unread messages.",
-          "favoriteFruit": "apple"
+          "email": "nelliesherman@retrack.com"
         },
         {
-          "_id": "5bd8915b1d4058140fc9e975",
+          "_id": "1234-b",
           "index": 1,
           "guid": "8535e990-92f4-4a2f-9000-308a30cb7093",
           "isActive": false,
-          "balance": "$3,311.19",
-          "picture": "http://placehold.it/32x32",
-          "age": 38,
-          "eyeColor": "blue",
           "name": "Jewel Moses",
-          "gender": "female",
-          "company": "COMTENT",
-          "email": "jewelmoses@comtent.com",
-          "phone": "+1 (842) 591-2752",
-          "address": "171 Scott Avenue, Roosevelt, New Mexico, 4948",
-          "about": "Non excepteur deserunt anim non elit laborum do duis aliqua deserunt anim culpa. Exercitation laborum sint incididunt ipsum consequat elit fugiat in ea reprehenderit. Sit ea qui laborum Lorem nulla aliquip culpa. Incididunt eu incididunt aute elit adipisicing Lorem commodo labore. Fugiat qui laboris anim qui Lorem fugiat commodo cupidatat ipsum nostrud proident mollit.\r\n",
-          "registered": "2018-09-12T06:59:13 +05:00",
-          "latitude": 89.467192,
-          "longitude": 43.453735,
-          "tags": [
-            "proident",
-            "aliqua",
-            "irure",
-            "deserunt",
-            "et",
-            "adipisicing",
-            "deserunt"
-          ],
-          "friends": [
-            {
-              "id": 0,
-              "name": "Blevins Webster"
-            },
-            {
-              "id": 1,
-              "name": "Kathryn Lott"
-            },
-            {
-              "id": 2,
-              "name": "Irwin Castaneda"
-            }
-          ],
-          "greeting": "Hello, Jewel Moses! You have 6 unread messages.",
-          "favoriteFruit": "strawberry"
+          "email": "jewelmoses@comtent.com"
         },
         {
-          "_id": "5bd8915b71cd96c959aaf632",
+          "_id": "1234-c",
           "index": 2,
-          "guid": "b83a8c9b-475f-42da-ba74-f0eb80a027f2",
-          "isActive": false,
-          "balance": "$3,076.49",
-          "picture": "http://placehold.it/32x32",
-          "age": 40,
-          "eyeColor": "brown",
           "name": "Teri Lawrence",
-          "gender": "female",
-          "company": "SUREPLEX",
-          "email": "terilawrence@sureplex.com",
-          "phone": "+1 (970) 545-3782",
-          "address": "307 Randolph Street, Cascades, New Hampshire, 5885",
-          "about": "Id veniam dolore ea aliqua voluptate eu ullamco occaecat non elit. Ea minim occaecat mollit fugiat adipisicing adipisicing aliquip et dolore in nostrud. Anim nisi esse eiusmod laborum do mollit mollit consectetur ea aute eiusmod exercitation. In voluptate adipisicing mollit enim tempor. Deserunt cillum elit cillum eu dolor sit sint minim id nisi aliquip eu cupidatat.\r\n",
-          "registered": "2016-12-20T07:36:02 +05:00",
-          "latitude": 26.6333,
-          "longitude": -49.76374,
-          "tags": [
-            "sint",
-            "proident",
-            "laborum",
-            "minim",
-            "anim",
-            "labore",
-            "aliqua"
-          ],
-          "friends": [
-            {
-              "id": 0,
-              "name": "Trudy Mclaughlin"
-            },
-            {
-              "id": 1,
-              "name": "Sherri Mcmillan"
-            },
-            {
-              "id": 2,
-              "name": "Robles Kennedy"
-            }
-          ],
-          "greeting": "Hello, Teri Lawrence! You have 3 unread messages.",
-          "favoriteFruit": "strawberry"
+          "email": "terilawrence@sureplex.com"
         },
         {
-          "_id": "5bd8915bb3bab17c333c7f99",
+          "_id": "1234-d",
           "index": 3,
-          "guid": "bdb7e438-6acc-4043-91aa-8b2ca371dd16",
-          "isActive": false,
-          "balance": "$3,371.51",
-          "picture": "http://placehold.it/32x32",
-          "age": 32,
-          "eyeColor": "green",
           "name": "Laurel Elliott",
-          "gender": "female",
-          "company": "CONFRENZY",
-          "email": "laurelelliott@confrenzy.com",
-          "phone": "+1 (907) 575-2848",
-          "address": "192 Main Street, Itmann, New Jersey, 4923",
-          "about": "Reprehenderit ipsum qui aliqua consectetur officia mollit Lorem deserunt labore exercitation occaecat. Sint et dolor cillum aliquip duis tempor ea mollit tempor. Sunt sunt velit labore anim ad laborum sit exercitation nisi qui ut laborum. Adipisicing cupidatat nulla reprehenderit mollit amet ut anim fugiat non occaecat consequat. Lorem minim ullamco adipisicing culpa. Sint magna officia excepteur exercitation.\r\n",
-          "registered": "2017-02-05T10:45:43 +05:00",
-          "latitude": -84.744655,
-          "longitude": 123.233834,
-          "tags": [
-            "est",
-            "consequat",
-            "sint",
-            "adipisicing",
-            "Lorem",
-            "nulla",
-            "occaecat"
-          ],
-          "friends": [
-            {
-              "id": 0,
-              "name": "Christie Powers"
-            },
-            {
-              "id": 1,
-              "name": "Mcdonald Skinner"
-            },
-            {
-              "id": 2,
-              "name": "Powers Harmon"
-            }
-          ],
-          "greeting": "Hello, Laurel Elliott! You have 4 unread messages.",
-          "favoriteFruit": "banana"
+          "email": "laurelelliott@confrenzy.com"
         },
         {
-          "_id": "5bd8915b9a02d6abb0d7176c",
+          "_id": "1234-e",
           "index": 4,
-          "guid": "b6dea734-6e37-48fb-9321-c96cd416c10c",
-          "isActive": false,
-          "balance": "$2,687.27",
-          "picture": "http://placehold.it/32x32",
-          "age": 29,
-          "eyeColor": "brown",
           "name": "Jacobs Preston",
-          "gender": "male",
-          "company": "ZILLACOM",
-          "email": "jacobspreston@zillacom.com",
-          "phone": "+1 (965) 562-3960",
-          "address": "387 Post Court, Lutsen, Idaho, 1177",
-          "about": "Mollit esse dolor ipsum Lorem exercitation sit elit excepteur esse excepteur fugiat labore id veniam. Exercitation ut duis culpa proident Lorem eiusmod. Quis laboris elit duis minim officia in ex sit labore exercitation.\r\n",
-          "registered": "2018-04-04T01:56:35 +05:00",
-          "latitude": -51.810421,
-          "longitude": -156.204828,
-          "tags": [
-            "non",
-            "nostrud",
-            "consequat",
-            "magna",
-            "ad",
-            "enim",
-            "amet"
-          ],
-          "friends": [
-            {
-              "id": 0,
-              "name": "Jimmie Hammond"
-            },
-            {
-              "id": 1,
-              "name": "Butler Ortega"
-            },
-            {
-              "id": 2,
-              "name": "Cabrera Cross"
-            }
-          ],
-          "greeting": "Hello, Jacobs Preston! You have 1 unread messages.",
-          "favoriteFruit": "apple"
+          "email": "jacobspreston@zillacom.com"
         }
     ]
 }
