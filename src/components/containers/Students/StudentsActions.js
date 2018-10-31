@@ -1,3 +1,6 @@
+import {fetchData} from "./dataApi"; 
+
+console.log(fetchData, 'fetch');
 export const STUDENTS_REQUEST_STARTING = "STUDENTS_REQUEST_STARTING";
 export const STUDENTS_REQUEST_SUCCESS =  "STUDENTS_REQUEST_SUCCESS";
 export const STUDENTS_REQUEST_FAILURE =  "STUDENTS_REQUEST_FAILURE";
@@ -8,7 +11,7 @@ export const fetchStudentsBegin = () => ({
 
 export const fetchStudentsSuccess = (studentList) => ({
     type: STUDENTS_REQUEST_SUCCESS,
-    studentList
+    data: studentList
 })
 
 export const fetchStudentsFailure = (error) => ({
@@ -19,12 +22,8 @@ export function getStudents(dispatch) {
     console.log('entando action.')
     return (dispatch) => {
         dispatch(fetchStudentsBegin());
-        fetch('../../../mocks/students').then((response) => {
-            console.log(response, 'response')
-            return JSON.parse(response)
-        }).then((data) => {
-            console.log(data, 'data-response')
-            dispatch(fetchStudentsSuccess(data))
+        fetchData().then((response) => {
+            return dispatch(fetchStudentsSuccess(response))
         }).catch((error) => {
             dispatch(fetchStudentsFailure(error));
         })

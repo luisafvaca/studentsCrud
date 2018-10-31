@@ -12,8 +12,7 @@ const initialState = {
 function Students(state= initialState, action){
     switch (action.type) {
         case STUDENTS_REQUEST_SUCCESS:
-            console.log(action.data) 
-            return state;
+            return {...state, students:[...state.students, action.data]};
         case STUDENTS_REQUEST_FAILURE:
             console.log(action.data, 'data action')
             return {...state, studentsError: action.data}
