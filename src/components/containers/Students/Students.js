@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { getStudents } from './StudentsActions';
 
-import Student from '../../functionals/student/student';
+import Student from '../Student/Student';
 
 import './Students.css';
 
