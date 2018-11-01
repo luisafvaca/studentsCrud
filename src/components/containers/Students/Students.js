@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { getStudents } from './StudentsActions';
+import { editStudent, deleteStudent } from '../Student/StudentActions';
 
 import Student from '../Student/Student';
 
@@ -9,8 +10,19 @@ import './Students.css';
 class Students extends React.Component {
     componentWillMount(){
         this.props.studentsRequest();
+        this.edit = this.edit.bind(this);
+        this.delete = this.delete.bind(this);
     }
 
+    edit(e) {
+        e.persist()
+        this.props.studentEdit()
+    }
+
+    delete(e) {
+        e.persist()
+        this.props.studentDelete()
+    }
     render(){
         const stundentsList = this.props.stundentsList;
         return(
@@ -22,7 +34,7 @@ class Students extends React.Component {
                     <div className="students-table-header-item">Edit</div>
                     <div className="students-table-header-item">Delete</div>
                 </div>
-                {stundentsList ? <Student stundentsList={this.props.stundentsList} /> : null}
+                {stundentsList ? <Student onClickDelete={this.delete} onClickEdit={this.edit} stundentsList={this.props.stundentsList} /> : null}
             </section>
         )
     }
@@ -31,7 +43,9 @@ class Students extends React.Component {
 const mapDespatchToProps = (dispatch) => {
     return {
         dispatch,
-        studentsRequest: () => dispatch(getStudents())
+        studentsRequest: () => dispatch(getStudents()),
+        studentEdit: () => dispatch(editStudent()),
+        studentDelete: () => dispatch(deleteStudent()),
     }
 }
 
