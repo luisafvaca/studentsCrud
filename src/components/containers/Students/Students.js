@@ -29,6 +29,7 @@ class Students extends React.Component {
     }
     render(){
         const stundentsList = this.props.stundentsList;
+        console.log(stundentsList, 'stundentsList')
         return(
             <section className="students-wrapper">
                 <div className="students-table-header">

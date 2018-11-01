@@ -28,7 +28,7 @@ function Students(state= initialState, action){
                        return item
                     }
                 });
-            return {...state, students: deletedItem}
+            return {...state, students: [deletedItem]}
         default:
             return state
     }
