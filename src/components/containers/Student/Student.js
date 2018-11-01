@@ -10,13 +10,20 @@ class Student extends React.Component {
     getRows(stundentsList, onClickEdit, onClickDelete){
         console.log(onClickEdit)
         const rows = map((item)=>{
+            const id    = item.id,
+                  name  = item.name,
+                  email = item.email;
             return(
-                <div className="student-row" key={item.id}>
-                    <p className="student-item">{item.id}</p>
-                    <p className="student-item">{item.name}</p>
-                    <p className="student-item">{item.email}</p>
-                    <p className="student-item"><button id={item.id} onClick={(e)=>onClickEdit(e)}>Edit</button></p>
-                    <p className="student-item"><button id={item.id} onClick={(e)=>onClickDelete(e)}>Delete</button></p>
+                <div className="student-row" key={id}>
+                    <p className="student-item">{id}</p>
+                    <p className="student-item">{name}</p>
+                    <p className="student-item">{email}</p>
+                    <p className="student-item">
+                        <button id={id} onClick={(e, id)=>onClickEdit(e, id)}>Edit</button>
+                    </p>
+                    <p className="student-item">
+                        <button id={id} onClick={(e, id)=>onClickDelete(e, id)}>Delete</button>
+                    </p>
                 </div>
             )
         }, stundentsList);

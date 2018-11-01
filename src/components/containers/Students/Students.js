@@ -16,12 +16,16 @@ class Students extends React.Component {
 
     edit(e) {
         e.persist()
-        this.props.studentEdit()
+        const id = e.target.getAttribute("id");
+        console.log(id)
+        this.props.studentEdit(id);
     }
 
     delete(e) {
-        e.persist()
-        this.props.studentDelete()
+        e.persist();
+        const id = e.target.getAttribute("id");
+        console.log(id)
+        this.props.studentDelete(id);
     }
     render(){
         const stundentsList = this.props.stundentsList;
@@ -44,8 +48,8 @@ const mapDespatchToProps = (dispatch) => {
     return {
         dispatch,
         studentsRequest: () => dispatch(getStudents()),
-        studentEdit: () => dispatch(editStudent()),
-        studentDelete: () => dispatch(deleteStudent()),
+        studentEdit: (id) => dispatch(editStudent(id)),
+        studentDelete: (id) => dispatch(deleteStudent(id)),
     }
 }
 
