@@ -13,6 +13,7 @@
 .student-row {
     display: flex;
     justify-content: space-around;
+    position: relative;
 }
 
 .student-item {
@@ -20,4 +21,9 @@
 }
 .students-table-header-item {
     width: 100%;
+}
+
+.student-item.save{
+    position: absolute;
+    right: -100%;
 }

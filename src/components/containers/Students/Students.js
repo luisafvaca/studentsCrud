@@ -17,19 +17,16 @@ class Students extends React.Component {
     edit(e) {
         e.persist()
         const id = e.target.getAttribute("id");
-        console.log(id)
         this.props.studentEdit(id);
     }
 
     delete(e) {
         e.persist();
         const id = e.target.getAttribute("id");
-        console.log(id)
         this.props.studentDelete(id);
     }
     render(){
         const stundentsList = this.props.stundentsList;
-        console.log(stundentsList, 'stundentsList')
         return(
             <section className="students-wrapper">
                 <div className="students-table-header">
