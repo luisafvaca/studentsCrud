@@ -6,14 +6,21 @@ import SomeContext from "../ReactContext/SomeContext";
 import {fetchData} from "../Students/dataApi"
 
 import './App.css';
+import students from '../../../mocks/students';
 
 class App extends React.Component {
- 
-  componentDidMount(){
+
+  state = { myStudents:[]}
+  
+  componentWillMount() {
     fetchData()
     .then( r=>{
-       this.context.students = r;
+       this.setState({myStudents :r });
    });
+  }
+
+  componentDidMount(){
+  
   }
 
   render() {
@@ -22,7 +29,7 @@ class App extends React.Component {
         <h1>Students Crud</h1>
         <Students></Students>
 
-        <SomeContext.Provider>
+        <SomeContext.Provider value={{students:this.state.myStudents}}>
           <StudentsReactContext/>
         </SomeContext.Provider>
       </div>

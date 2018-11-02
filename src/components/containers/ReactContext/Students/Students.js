@@ -4,7 +4,7 @@ import './Students.css'
 import SomeContext from "../SomeContext";
 
 class Students extends Component {
-  //  static contextType = SomeContext;
+    static contextType = SomeContext;
 
     state = {
         listStudent : [],
@@ -12,10 +12,8 @@ class Students extends Component {
     }
 
     componentWillMount(){
-       /* <SomeContext.Consumer>
-            {someContext => {
-                return this.setState({listStudent: someContext.students});}}
-        </SomeContext.Consumer>*/
+       this.setState({listStudent: this.context.students});
+     
     }
 
     render(){
