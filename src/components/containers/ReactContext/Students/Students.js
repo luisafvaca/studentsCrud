@@ -1,20 +1,26 @@
 import React, {Component} from "react";
 import Student from "./Student/Student";
 import './Students.css'
+import SomeContext from "../SomeContext";
 
 class Students extends Component {
+  //  static contextType = SomeContext;
+
     state = {
-        listStudent : [
-            {id: 1, name: 'Albert Jimenez', email:'albert.jimenez@globant.com'},
-            {id: 2, name: 'Andres Jimenez', email:'albert.jimenez@globant.com'},
-            {id: 3, name: 'Antonio Jimenez', email:'albert.jimenez@globant.com'}
-        ],
+        listStudent : [],
         editing: false
+    }
+
+    componentWillMount(){
+       /* <SomeContext.Consumer>
+            {someContext => {
+                return this.setState({listStudent: someContext.students});}}
+        </SomeContext.Consumer>*/
     }
 
     render(){
         const students = this.state.listStudent.map( e =>{
-           return <Student id={e.id} name={e.name} email={e.email} enableEditing={this.state.editing}/>
+           return <Student key={e.id} id={e.id} name={e.name} email={e.email} enableEditing={this.state.editing}/>
         });
 
         return (
