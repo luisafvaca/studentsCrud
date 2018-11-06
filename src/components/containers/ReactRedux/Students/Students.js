@@ -13,10 +13,12 @@ class Students extends React.Component {
         super(props)
         this.state = {
             isEditing: false,
-            editingId: {
-                id: "",
-                name: ""
-            }
+            editingId: "",
+            editItemIfo: {
+                id:"",
+                name: "",
+                email: ""
+            } 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
 
@@ -30,7 +32,9 @@ class Students extends React.Component {
     edit(e) {
         e.persist()
         const id = e.target.getAttribute("id");
-        this.setState({isEditing: true, editingId: {id: id}})
+        const email = e.target.getAttribute("email");
+        const name = e.target.getAttribute("name")
+        this.setState({isEditing: true, editingId: id, editItemIfo:{id: id, name: name, email: email }})
     }
 
     delete(e) {
@@ -47,13 +51,14 @@ class Students extends React.Component {
             id: e.target.id
         }
         this.props.studentEdit(updateData)
+        this.setState({isEditing: false})
     }
 
     render(){
         const stundentsList = this.props.stundentsList;
         return(
             <section className="students-wrapper">
-                <PopUp show={this.state.isEditing} itemEdit={this.state.editingId.id} submit={this.handleSubmit}/>
+                <PopUp show={this.state.isEditing} itemEdit={this.state.editItemIfo} submit={this.handleSubmit}/>
                 <div className="students-table-header">
                     <div className="students-table-header-item">Id</div>
                     <div className="students-table-header-item">Name</div>

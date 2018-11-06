@@ -7,35 +7,6 @@ import "./Student.css";
 
 class Student extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            changedEmail: {},
-        }
-        this.updateinput = this.updateinput.bind(this);
-        this.saving = this.saving.bind(this);
-    }
-
-    updateinput(e){
-        let currentChanged = {};
-        const itemsChanged = {};
-       
-        itemsChanged.name = e.target.value;
-        itemsChanged.id = e.target.id;
-        itemsChanged.typeField = e.target.name;
-        
-        currentChanged = itemsChanged
-
-        this.setState({
-            changedEmail: currentChanged
-        }) 
-
-    }
-
-    saving(){
-        this.props.changedEmail(this.state.changedEmail)
-    }
-
     getRows(stundentsList, onClickEdit, onClickDelete){
         const rows = map((item)=>{
             const id    = item.id,
@@ -47,7 +18,7 @@ class Student extends Component {
                     <p className="student-item">{name}</p>
                     <p className="student-item">{email}</p>
                     <p className="student-item">
-                        <button id={id} onClick={(e, id, name, email)=>onClickEdit(e, id, name, email)}>Edit</button>
+                        <button id={id} email={email} name={name} onClick={(e)=>onClickEdit(e)}>Edit</button>
                     </p>
                     <p className="student-item">
                         <button id={id} onClick={(e, id)=>onClickDelete(e, id)}>Delete</button>
