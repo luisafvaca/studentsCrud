@@ -4,6 +4,7 @@ import { getStudents } from './StudentsActions';
 import { editStudent, deleteStudent } from '../Student/StudentActions';
 
 import Student from '../Student/Student';
+import PopUp from '../PopUp/PopUp';
 
 import './Students.css';
 
@@ -29,6 +30,7 @@ class Students extends React.Component {
         const stundentsList = this.props.stundentsList;
         return(
             <section className="students-wrapper">
+                <PopUp show/>
                 <div className="students-table-header">
                     <div className="students-table-header-item">Id</div>
                     <div className="students-table-header-item">Name</div>

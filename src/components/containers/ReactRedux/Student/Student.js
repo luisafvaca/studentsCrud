@@ -1,11 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { map } from 'ramda';
 import { connect } from 'react-redux';
 import { savingEmail } from '../Students/StudentsActions';
 
 import "./Student.css";
 
-class Student extends React.Component {
+class Student extends Component {
 
     constructor(props){
         super(props);
@@ -42,10 +42,10 @@ class Student extends React.Component {
                   name  = item.name,
                   email = item.email;
     
-            const studentItemEmail = item.edit ? 
-                                    <p className="student-item"><input type="email" id={id} name="email" placeholder={email} maxLength="60" onChange={this.updateinput} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]" /></p> 
-                                    : <p className="student-item">{email}</p>;
-            const saveBtn = item.edit ?  <p className="student-item save"><button onClick={this.saving}>Save</button></p> : null;
+            // const studentItemEmail = item.edit ? 
+            //                         <p className="student-item"><input type="email" id={id} name="email" placeholder={email} maxLength="60" onChange={this.updateinput} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]" /></p> 
+            //                         : <p className="student-item">{email}</p>;
+            // const saveBtn = item.edit ?  <p className="student-item save"><button onClick={this.saving}>Save</button></p> : null;
             return(
                 <div className="student-row" key={id}>
                     <p className="student-item">{id}</p>
