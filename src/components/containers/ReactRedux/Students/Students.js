@@ -9,6 +9,13 @@ import PopUp from '../PopUp/PopUp';
 import './Students.css';
 
 class Students extends React.Component {
+    constructor(props){
+        super(props)
+        this.state = {
+            isEditing: false,
+            editingId: ""
+        }
+    }
     componentWillMount(){
         this.props.studentsRequest();
         this.edit = this.edit.bind(this);
@@ -18,6 +25,7 @@ class Students extends React.Component {
     edit(e) {
         e.persist()
         const id = e.target.getAttribute("id");
+        this.setState({isEditing: true, editingId: id})
         this.props.studentEdit(id);
     }
 
@@ -26,11 +34,13 @@ class Students extends React.Component {
         const id = e.target.getAttribute("id");
         this.props.studentDelete(id);
     }
+
     render(){
         const stundentsList = this.props.stundentsList;
+        console.log(this.state, 'state')
         return(
             <section className="students-wrapper">
-                <PopUp show/>
+                <PopUp show={this.state.isEditing} />
                 <div className="students-table-header">
                     <div className="students-table-header-item">Id</div>
                     <div className="students-table-header-item">Name</div>
