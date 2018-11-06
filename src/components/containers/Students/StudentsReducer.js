@@ -1,7 +1,8 @@
 import {
     // STUDENTS_REQUEST_STARTING,
     STUDENTS_REQUEST_SUCCESS,
-    STUDENTS_REQUEST_FAILURE
+    STUDENTS_REQUEST_FAILURE,
+    SAVE_EMAIL
 } from './StudentsActions';
 
 import {
@@ -11,7 +12,8 @@ import {
 
 const initialState = {
     students: [],
-    studentsError: ""
+    studentsError: "",
+    changedStudens: []
 }
 
 function Students(state= initialState, action){
@@ -37,6 +39,17 @@ function Students(state= initialState, action){
                     }
                 });
             return {...state, students: [deletedItem]}
+            case SAVE_EMAIL:
+                let chageEmail = state.students[0].filter((item)=>{
+                    if(item.id === action.data.id){
+                        item.email = action.data.name;
+                        item.edit = false;
+                        return item
+                    }else {
+                        return item
+                    }
+                })
+                return {...state, students:[chageEmail]}
         default:
             return state
     }

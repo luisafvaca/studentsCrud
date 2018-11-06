@@ -1,10 +1,37 @@
 import React from 'react';
-import {map} from 'ramda';
+import { map } from 'ramda';
+import { connect } from 'react-redux';
+import { savingEmail } from '../Students/StudentsActions';
 
 class Student extends React.Component {
 
     constructor(props){
-        super();
+        super(props);
+        this.state = {
+            changedEmail: {},
+        }
+        this.updateinput = this.updateinput.bind(this);
+        this.saving = this.saving.bind(this);
+    }
+
+    updateinput(e){
+        let currentChanged = {};
+        const itemsChanged = {};
+       
+        itemsChanged.name = e.target.value;
+        itemsChanged.id = e.target.id;
+        itemsChanged.typeField = e.target.name;
+        
+        currentChanged = itemsChanged
+
+        this.setState({
+            changedEmail: currentChanged
+        }) 
+
+    }
+
+    saving(){
+        this.props.changedEmail(this.state.changedEmail)
     }
 
     getRows(stundentsList, onClickEdit, onClickDelete){
@@ -12,13 +39,15 @@ class Student extends React.Component {
             const id    = item.id,
                   name  = item.name,
                   email = item.email;
-            const studentItemName = item.edit ? <p className="student-item"><input type="text" placeholder={name} /></p> :  <p className="student-item">{name}</p>;
-            const studentItemEmail = item.edit ? <p className="student-item"><input type="text" placeholder={email}></input></p> : <p className="student-item">{email}</p>;
-            const saveBtn = item.edit ?  <p className="student-item save"><button>Save</button></p> : null;
+    
+            const studentItemEmail = item.edit ? 
+                                    <p className="student-item"><input type="email" id={id} name="email" placeholder={email} maxLength="60" onChange={this.updateinput} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]" /></p> 
+                                    : <p className="student-item">{email}</p>;
+            const saveBtn = item.edit ?  <p className="student-item save"><button onClick={this.saving}>Save</button></p> : null;
             return(
                 <div className="student-row" key={id}>
                     <p className="student-item">{id}</p>
-                    {studentItemName}
+                    <p className="student-item">{name}</p>
                     {studentItemEmail}
                     <p className="student-item">
                         <button id={id} onClick={(e, id)=>onClickEdit(e, id)}>Edit</button>
@@ -51,4 +80,12 @@ class Student extends React.Component {
     }
 }   
 
-export default Student;
+const mapDespatchToProps = (dispatch) => {
+    return {
+        dispatch,
+        changedEmail: (data) => dispatch(savingEmail(data)),
+    }
+}
+
+
+export default connect (null, mapDespatchToProps)(Student);
