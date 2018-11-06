@@ -52,7 +52,7 @@ class Student extends Component {
                     <p className="student-item">{name}</p>
                     <p className="student-item">{email}</p>
                     <p className="student-item">
-                        <button id={id} onClick={(e, id)=>onClickEdit(e, id)}>Edit</button>
+                        <button id={id} onClick={(e, id, name, email)=>onClickEdit(e, id, name, email)}>Edit</button>
                     </p>
                     <p className="student-item">
                         <button id={id} onClick={(e, id)=>onClickDelete(e, id)}>Delete</button>
