@@ -12,7 +12,7 @@ class PopUp extends Component {
                     <input className="pop-up-input" value="test"></input>
                     <label className="pop-up-label"><h1>Email</h1></label>
                     <input className="pop-up-input" value="test"></input>
-                    <input type="submit" value="Save"></input>
+                    <input type="submit" onClick={this.props.clicked} value="Save"></input>
                     <input type="submit" value="Cancel"></input>              
                 </form>
             </div>
