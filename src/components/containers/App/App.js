@@ -20,7 +20,6 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state, 'is rendering')
     return (
       <div className="App">
         <h1>Students Crud Redux</h1>

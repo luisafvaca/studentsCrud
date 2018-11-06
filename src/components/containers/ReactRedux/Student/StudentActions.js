@@ -2,9 +2,9 @@ export const EDIT_STUDENT = "EDIT_STUDENT";
 export const DELET_STUDENT = "DELET_STUDENT";
 
 
-export const editStudent = (id) => ({
+export const editStudent = (dataToEdit) => ({
     type: EDIT_STUDENT,
-    id: id
+    data: dataToEdit
 })
 
 export const deleteStudent = (id) => ({

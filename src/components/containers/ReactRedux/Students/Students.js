@@ -31,7 +31,6 @@ class Students extends React.Component {
         e.persist()
         const id = e.target.getAttribute("id");
         this.setState({isEditing: true, editingId: {id: id}})
-        this.props.studentEdit(id);
     }
 
     delete(e) {
@@ -46,6 +45,7 @@ class Students extends React.Component {
             email: e.target[1].value,
             id: e.target.id
         }
+        this.props.studentEdit(updateData)
     }
 
     render(){

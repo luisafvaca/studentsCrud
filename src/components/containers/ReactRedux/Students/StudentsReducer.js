@@ -24,12 +24,7 @@ function Students(state= initialState, action){
             return {...state, studentsError: action.data}
         case EDIT_STUDENT:
                 let editItem = state.students[0].map((item, idx)=>{
-                    if(item.id === action.id){
-                        const isEdit = {...item, edit:true}
-                        return isEdit;
-                    }else{
-                        return item
-                    }
+                    console.log(action.data, 'action.data---')
                 })
             return {...state, students:[editItem]}
             case DELET_STUDENT:
