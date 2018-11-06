@@ -2,8 +2,8 @@ import React from 'react';
 
 import Students from '../ReactRedux/Students/Students';
 import StudentsReactContext from '../ReactContext/Students/Students';
-import SomeContext from "../ReactContext/SomeContext";
-import {fetchData} from "../ReactRedux/Students/dataApi";
+import SomeContext from '../ReactContext/SomeContext';
+import {fetchData} from '../ReactRedux/Students/dataApi';
 
 import './App.css';
 
@@ -19,7 +19,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div className='App'>
         <h1>Students Crud Redux</h1>
         <Students></Students>
         <h1>Students Crud Context</h1>

@@ -3,7 +3,7 @@ import { map } from 'ramda';
 import { connect } from 'react-redux';
 import { savingEmail } from '../Students/StudentsActions';
 
-import "./Student.css";
+import './Student.css';
 
 class Student extends Component {
 
@@ -13,14 +13,14 @@ class Student extends Component {
                   name  = item.name,
                   email = item.email;
             return(
-                <div className="student-row" key={id}>
-                    <p className="student-item">{id}</p>
-                    <p className="student-item">{name}</p>
-                    <p className="student-item">{email}</p>
-                    <p className="student-item">
+                <div className='student-row' key={id}>
+                    <p className='student-item'>{id}</p>
+                    <p className='student-item'>{name}</p>
+                    <p className='student-item'>{email}</p>
+                    <p className='student-item'>
                         <button id={id} email={email} name={name} onClick={(e)=>onClickEdit(e)}>Edit</button>
                     </p>
-                    <p className="student-item">
+                    <p className='student-item'>
                         <button id={id} onClick={(e, id)=>onClickDelete(e, id)}>Delete</button>
                     </p>
                 </div>
@@ -28,7 +28,7 @@ class Student extends Component {
         }, stundentsList);
 
         return (
-            <div className="students-table-body">
+            <div className='students-table-body'>
                 {rows}
             </div> 
         )
@@ -40,7 +40,7 @@ class Student extends Component {
         const onClickDelete = this.props.onClickDelete;
         const rows = this.getRows(studentList, onClickEdit, onClickDelete);
         return (
-            <div className="students-table-body">
+            <div className='students-table-body'>
                 {rows}
             </div> 
         )

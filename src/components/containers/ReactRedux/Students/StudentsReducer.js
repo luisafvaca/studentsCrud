@@ -12,7 +12,7 @@ import {
 
 const initialState = {
     students: [],
-    studentsError: "",
+    studentsError: '',
     changedStudens: [],
     others: []
 }

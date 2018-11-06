@@ -13,11 +13,11 @@ class Students extends React.Component {
         super(props)
         this.state = {
             isEditing: false,
-            editingId: "",
+            editingId: '',
             editItemIfo: {
-                id:"",
-                name: "",
-                email: ""
+                id:'',
+                name: '',
+                email: ''
             } 
         }
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,27 +32,27 @@ class Students extends React.Component {
 
     edit(e) {
         e.persist()
-        const id = e.target.getAttribute("id");
-        const email = e.target.getAttribute("email");
-        const name = e.target.getAttribute("name")
+        const id = e.target.getAttribute('id');
+        const email = e.target.getAttribute('email');
+        const name = e.target.getAttribute('name')
         this.setState({isEditing: true, editingId: id, editItemIfo:{id: id, name: name, email: email }})
     }
 
     delete(e) {
         e.persist();
-        const id = e.target.getAttribute("id");
+        const id = e.target.getAttribute('id');
         this.props.studentDelete(id);
     }
 
     handleSubmit(e, id){
         e.preventDefault();
         const updateData={
-            name: e.target[0].value,
-            email: e.target[1].value,
+            name: e.target[0].value === '' ? this.state.editItemIfo.name : e.target[0].value,
+            email: e.target[1].value === '' ? this.state.editItemIfo.email : e.target[1].value,
             id: e.target.id
         }
         this.props.studentEdit(updateData)
-        this.setState({isEditing: false})
+        this.setState({isEditing: false, editItemIfo: {id: ', name: ', email: ''}})
     }
 
     cancel(e){
@@ -62,14 +62,14 @@ class Students extends React.Component {
     render(){
         const stundentsList = this.props.stundentsList;
         return(
-            <section className="students-wrapper">
+            <section className='students-wrapper'>
                 <PopUp show={this.state.isEditing} itemEdit={this.state.editItemIfo} submit={this.handleSubmit} cancel={this.cancel}/>
-                <div className="students-table-header">
-                    <div className="students-table-header-item">Id</div>
-                    <div className="students-table-header-item">Name</div>
-                    <div className="students-table-header-item">Email</div>
-                    <div className="students-table-header-item">Edit</div>
-                    <div className="students-table-header-item">Delete</div>
+                <div className='students-table-header'>
+                    <div className='students-table-header-item'>Id</div>
+                    <div className='students-table-header-item'>Name</div>
+                    <div className='students-table-header-item'>Email</div>
+                    <div className='students-table-header-item'>Edit</div>
+                    <div className='students-table-header-item'>Delete</div>
                 </div>
                 {stundentsList ? <Student onClickDelete={this.delete} onClickEdit={this.edit} stundentsList={this.props.stundentsList} /> : null}
             </section>
