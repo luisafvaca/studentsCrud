@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import { map } from 'ramda';
-import { connect } from 'react-redux';
-import { savingEmail } from '../Students/StudentsActions';
 
 import './Student.css';
 
@@ -47,12 +45,5 @@ class Student extends Component {
     }
 }   
 
-const mapDespatchToProps = (dispatch) => {
-    return {
-        dispatch,
-        changedEmail: (data) => dispatch(savingEmail(data)),
-    }
-}
 
-
-export default connect (null, mapDespatchToProps)(Student);
+export default Student;

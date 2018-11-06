@@ -1,9 +1,9 @@
 import {
-    // STUDENTS_REQUEST_STARTING,
     STUDENTS_REQUEST_SUCCESS,
     STUDENTS_REQUEST_FAILURE,
-    SAVE_EMAIL
 } from './StudentsActions';
+
+import {map, filter} from 'ramda';
 
 import {
     EDIT_STUDENT,
@@ -24,7 +24,7 @@ function Students(state= initialState, action){
         case STUDENTS_REQUEST_FAILURE:
             return {...state, studentsError: action.data}
         case EDIT_STUDENT:
-                let editItem = state.students[0].map((item, idx)=>{
+                let editItem = map((item, idx)=>{
                     if(action.data.id === item.id){
                         item.name = action.data.name;
                         item.email = action.data.email;
@@ -32,15 +32,15 @@ function Students(state= initialState, action){
                     }else {
                         return item
                     }
-                })
+                }, state.students[0])
             return  {...state, students:[editItem]}
-            case DELET_STUDENT:
-                let deletedItem = state.students[0].filter((item, idx)=>{
-                    if(item.id != action.id){
-                       return item
-                    }
-                });
-            return {...state, students: [deletedItem]}
+        case DELET_STUDENT:
+            let deletedItem = filter((item, idx)=>{
+                if(item.id != action.id){
+                    return item
+                }
+            }, state.students[0]);
+        return {...state, students: [deletedItem]}
         default:
             return state
     }
