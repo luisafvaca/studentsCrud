@@ -40,6 +40,7 @@ class Students extends React.Component {
     }
 
     handleSubmit(e, id){
+        e.preventDefault();
         const updateData={
             name: e.target[0].value,
             email: e.target[1].value,

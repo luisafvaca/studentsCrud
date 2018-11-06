@@ -13,7 +13,8 @@ import {
 const initialState = {
     students: [],
     studentsError: "",
-    changedStudens: []
+    changedStudens: [],
+    others: []
 }
 
 function Students(state= initialState, action){
@@ -24,9 +25,15 @@ function Students(state= initialState, action){
             return {...state, studentsError: action.data}
         case EDIT_STUDENT:
                 let editItem = state.students[0].map((item, idx)=>{
-                    console.log(action.data, 'action.data---')
+                    if(action.data.id === item.id){
+                        item.name = action.data.name;
+                        item.email = action.data.email;
+                        return item
+                    }else {
+                        return item
+                    }
                 })
-            return {...state, students:[editItem]}
+            return  {...state, students:[editItem]}
             case DELET_STUDENT:
                 let deletedItem = state.students[0].filter((item, idx)=>{
                     if(item.id != action.id){
@@ -34,17 +41,6 @@ function Students(state= initialState, action){
                     }
                 });
             return {...state, students: [deletedItem]}
-            case SAVE_EMAIL:
-                let chageEmail = state.students[0].filter((item)=>{
-                    if(item.id === action.data.id){
-                        item.email = action.data.name;
-                        item.edit = false;
-                        return item
-                    }else {
-                        return item
-                    }
-                })
-                return {...state, students:[chageEmail]}
         default:
             return state
     }

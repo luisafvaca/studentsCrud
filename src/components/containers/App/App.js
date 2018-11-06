@@ -13,10 +13,8 @@ class App extends React.Component {
   
   componentDidMount(){
     fetchData()
-    .then( item=>{
-       this.setState({myStudents :item });
+    .then( students => { this.setState({myStudents: students });
    });
-  
   }
 
   render() {
@@ -25,7 +23,7 @@ class App extends React.Component {
         <h1>Students Crud Redux</h1>
         <Students></Students>
         <h1>Students Crud Context</h1>
-        <SomeContext.Provider value={{students:this.state.myStudents}}>
+        <SomeContext.Provider value={{students: this.state.myStudents}}>
           <StudentsReactContext/>
         </SomeContext.Provider>
       </div>
