@@ -6,29 +6,26 @@ import SomeContext from "../ReactContext/SomeContext";
 import {fetchData} from "../Students/dataApi"
 
 import './App.css';
-import students from '../../../mocks/students';
 
 class App extends React.Component {
 
   state = { myStudents:[]}
   
-  componentWillMount() {
-    fetchData()
-    .then( r=>{
-       this.setState({myStudents :r });
-   });
-  }
-
   componentDidMount(){
+    fetchData()
+    .then( item=>{
+       this.setState({myStudents :item });
+   });
   
   }
 
   render() {
+    console.log(this.state, 'is rendering')
     return (
       <div className="App">
-        <h1>Students Crud</h1>
+        <h1>Students Crud Redux</h1>
         <Students></Students>
-
+        <h1>Students Crud Context</h1>
         <SomeContext.Provider value={{students:this.state.myStudents}}>
           <StudentsReactContext/>
         </SomeContext.Provider>
