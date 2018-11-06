@@ -8,7 +8,7 @@ class PopUp extends Component {
         const userId = this.props.itemEdit.id;
         const currentName = this.props.itemEdit.name;
         const currentEmail = this.props.itemEdit.email;
-        
+
         return(
             <div className={`pop-up ${isShow}`}>
                <form className="pop-up-form" id={userId} onSubmit={this.props.submit}>
@@ -17,7 +17,7 @@ class PopUp extends Component {
                     <label className="pop-up-label"><h1>Email</h1></label>
                     <input className="pop-up-input" placeholder={currentEmail}></input>
                     <input type="submit" value="Save"></input>
-                    <input type="submit" value="Cancel"></input>              
+                    <input type="submit" value="Cancel" onClick={this.props.cancel}></input>              
                 </form>
             </div>
         )

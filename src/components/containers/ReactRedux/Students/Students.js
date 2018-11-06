@@ -20,7 +20,8 @@ class Students extends React.Component {
                 email: ""
             } 
         }
-        this.handleSubmit = this.handleSubmit.bind(this)
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.cancel = this.cancel.bind(this)
 
     }
     componentWillMount(){
@@ -54,11 +55,15 @@ class Students extends React.Component {
         this.setState({isEditing: false})
     }
 
+    cancel(e){
+        e.preventDefault();
+        this.setState({isEditing:false})
+    }
     render(){
         const stundentsList = this.props.stundentsList;
         return(
             <section className="students-wrapper">
-                <PopUp show={this.state.isEditing} itemEdit={this.state.editItemIfo} submit={this.handleSubmit}/>
+                <PopUp show={this.state.isEditing} itemEdit={this.state.editItemIfo} submit={this.handleSubmit} cancel={this.cancel}/>
                 <div className="students-table-header">
                     <div className="students-table-header-item">Id</div>
                     <div className="students-table-header-item">Name</div>
