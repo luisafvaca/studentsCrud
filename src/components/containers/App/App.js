@@ -1,9 +1,9 @@
 import React from 'react';
 
-import Students from '../../containers/Students/Students';
+import Students from '../ReactRedux/Students/Students';
 import StudentsReactContext from '../ReactContext/Students/Students';
 import SomeContext from "../ReactContext/SomeContext";
-import {fetchData} from "../Students/dataApi"
+import {fetchData} from "../ReactRedux/Students/dataApi";
 
 import './App.css';
 
